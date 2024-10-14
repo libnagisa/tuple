@@ -5,7 +5,7 @@
 #include "./static_tuple.h"
 #include "./environment.h"
 
-NGS_BUILD_LIB_DETAIL_BEGIN
+NAGISA_BUILD_LIB_DETAIL_BEGIN
 
 
 template <class T, class KxArg, class IxArg, ::std::size_t IxNext, class... Sequences>
@@ -34,4 +34,4 @@ using tuple_cat_t = typename tuple_cat_impl<
 >::return_type;
 
 
-NGS_BUILD_LIB_DETAIL_END
+NAGISA_BUILD_LIB_DETAIL_END

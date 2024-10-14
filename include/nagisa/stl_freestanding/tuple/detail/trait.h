@@ -3,7 +3,7 @@
 #include "./template.h"
 #include "./environment.h"
 
-NGS_BUILD_LIB_DETAIL_BEGIN
+NAGISA_BUILD_LIB_DETAIL_BEGIN
 
 struct empty{};
 
@@ -46,10 +46,10 @@ namespace detail_get
 	void get();
 
 	template<class T, ::std::size_t I>
-	concept get_has_member = requires(T tuple) { NGS_STL_FREESTANDING_UTILITY_FORWARD(tuple).template get<I>(); };
+	concept get_has_member = requires(T tuple) { NAGISA_STL_FREESTANDING_UTILITY_FORWARD(tuple).template get<I>(); };
 
 	template<class T, ::std::size_t I>
-	concept get_has_adl = requires(T tuple) { get<I>(NGS_STL_FREESTANDING_UTILITY_FORWARD(tuple)); };
+	concept get_has_adl = requires(T tuple) { get<I>(NAGISA_STL_FREESTANDING_UTILITY_FORWARD(tuple)); };
 
 	template<::std::size_t I>
 	struct get_cpo
@@ -58,11 +58,11 @@ namespace detail_get
 		{
 			if constexpr (get_has_member<decltype(tuple), I>)
 			{
-				return NGS_STL_FREESTANDING_UTILITY_FORWARD(tuple).template get<I>();
+				return NAGISA_STL_FREESTANDING_UTILITY_FORWARD(tuple).template get<I>();
 			}
 			else if constexpr (get_has_adl<decltype(tuple), I>)
 			{
-				return get<I>(NGS_STL_FREESTANDING_UTILITY_FORWARD(tuple));
+				return get<I>(NAGISA_STL_FREESTANDING_UTILITY_FORWARD(tuple));
 			}
 			else
 			{
@@ -78,4 +78,4 @@ namespace detail_get
 template<::std::size_t I>
 inline constexpr detail_get::get_cpo<I> get{};
 
-NGS_BUILD_LIB_DETAIL_END
+NAGISA_BUILD_LIB_DETAIL_END

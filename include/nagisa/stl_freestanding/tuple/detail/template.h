@@ -2,7 +2,7 @@
 
 #include "./environment.h"
 
-NGS_BUILD_LIB_DETAIL_BEGIN
+NAGISA_BUILD_LIB_DETAIL_BEGIN
 
 namespace template_traits
 {
@@ -31,4 +31,4 @@ namespace template_traits
 	using pure_type_rep_arg_t = typename pure_type_traits<T>::template replace_argument<NewArgs...>;
 }
 
-NGS_BUILD_LIB_DETAIL_END
+NAGISA_BUILD_LIB_DETAIL_END

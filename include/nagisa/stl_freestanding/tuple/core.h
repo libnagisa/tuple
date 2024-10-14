@@ -6,7 +6,7 @@
 #include "./detail/static_tuple.h"
 #include "./environment.h"
 //
-NGS_BUILD_LIB_BEGIN
+NAGISA_BUILD_LIB_BEGIN
 
 // trait
 using details::tuple_element;
@@ -25,4 +25,4 @@ using details::static_tuple;
 // algorithm
 using details::tuple_cat_t;
 
-NGS_BUILD_LIB_END
+NAGISA_BUILD_LIB_END
