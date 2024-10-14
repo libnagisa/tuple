@@ -30,7 +30,7 @@ namespace static_tuple_adl
 		}
 
 #if (__cpp_explicit_this_parameter >= 202110L)
-		constexpr auto&& _base(this auto&& self) { return static_cast<type_traits::add_cvref_like_t<base_type, decltype(self)>>(*this); }
+		constexpr auto&& _base(this auto&& self) { return static_cast<type_traits::add_cvref_like_t<base_type, decltype(self)>>(self); }
 		constexpr auto&& _value(this auto&& self) { return NAGISA_STL_FREESTANDING_UTILITY_FORWARD(self)._data; }
 		constexpr auto&& _value(this self_type&& self) { return ::std::move(NAGISA_STL_FREESTANDING_UTILITY_FORWARD(self)._data); }
 		constexpr auto&& _value(this const self_type&& self) { return static_cast<::std::add_rvalue_reference_t<::std::add_const_t<value_type>>>(NAGISA_STL_FREESTANDING_UTILITY_FORWARD(self)._data); }
